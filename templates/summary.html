@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Parking Summary</title></head>
+<body>
+<h2>Current Vehicles in Parking</h2>
+<a href="{{ url_for('index') }}">Back to Dashboard</a>
+<ul>
+{% for type, count in data %}
+    <li><b>{{ type }}</b>: {{ count }}</li>
+{% endfor %}
+</ul>
+<p><strong>Total:</strong> {{ total }}</p>
+</body>
+</html>

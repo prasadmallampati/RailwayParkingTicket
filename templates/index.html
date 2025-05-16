@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+<h2>Welcome {{ session['username'] }}</h2>
+{% if error %}<p style="color:red;"><strong>{{ error }}</strong></p>{% endif %}
+
+<a href="{{ url_for('logout') }}">Logout</a> |
+<a href="{{ url_for('report') }}">Report</a> |
+<a href="{{ url_for('summary') }}">Summary</a>
+
+<h3>New Ticket</h3>
+<form method="POST" action="{{ url_for('new_ticket') }}">
+    Vehicle No: <input name="vehicle_number" required>
+    Type:
+    <select name="vehicle_type">
+        <option value="2-wheeler">2-Wheeler</option>
+        <option value="4-wheeler">4-Wheeler</option>
+    </select>
+    <button type="submit">Issue</button>
+</form>
+
+<h3>Filter Tickets</h3>
+<form method="POST">
+    Vehicle No: <input name="vehicle_number">
+    Type:
+    <select name="vehicle_type">
+        <option value="All">All</option>
+        <option value="2-wheeler">2-Wheeler</option>
+        <option value="4-wheeler">4-Wheeler</option>
+    </select>
+    <button>Filter</button>
+</form>
+
+<h3>Active Tickets</h3>
+<table border="1">
+<tr><th>ID</th><th>Vehicle</th><th>Type</th><th>Entry</th><th>Action</th></tr>
+{% for t in tickets %}
+<tr>
+    <td>{{ t[0] }}</td><td>{{ t[1] }}</td><td>{{ t[2] }}</td><td>{{ t[3] }}</td>
+    <td><a href="{{ url_for('exit_ticket', ticket_id=t[0]) }}">Exit</a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

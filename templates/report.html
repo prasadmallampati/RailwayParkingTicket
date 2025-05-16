@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Completed Tickets Report</title></head>
+<body>
+<h2>Completed Tickets</h2>
+<a href="{{ url_for('index') }}">Back to Dashboard</a> |
+<a href="{{ url_for('export_csv') }}">Download CSV</a>
+
+<form method="POST">
+    Vehicle No: <input name="vehicle_number">
+    Start Date: <input type="date" name="start_date">
+    End Date: <input type="date" name="end_date">
+    <button>Filter</button>
+</form>
+
+<table border="1">
+<tr><th>ID</th><th>Vehicle</th><th>Type</th><th>Entry</th><th>Exit</th><th>Charge</th></tr>
+{% for t in tickets %}
+<tr>
+    <td>{{ t[0] }}</td><td>{{ t[1] }}</td><td>{{ t[2] }}</td>
+    <td>{{ t[3] }}</td><td>{{ t[4] }}</td><td>{{ t[5] }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Confirm Exit</title></head>
+<body>
+<h2>Confirm Exit</h2>
+<p><b>Ticket ID:</b> {{ ticket_id }}</p>
+<p><b>Vehicle Type:</b> {{ vehicle_type }}</p>
+<p><b>Entry Time:</b> {{ entry_time }}</p>
+<p><b>Charge:</b> ₹{{ charge }}</p>
+
+<form method="POST">
+    <input type="hidden" name="charge" value="{{ charge }}">
+    <button type="submit">✅ Confirm & Exit</button>
+</form>
+<a href="{{ url_for('index') }}">Cancel</a>
+</body>
+</html>

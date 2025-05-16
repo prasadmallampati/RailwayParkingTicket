@@ -1,0 +1,62 @@
+# Generate and save complete static/style.css file
+style_css_content = """
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+h2, h3 {
+    color: #222;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 6px 10px;
+    margin: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #888;
+    text-align: center;
+}
+
+a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+"""
+
+# Define path and save the file
+static_dir = "D:\RailwayParkingTicket\templates\static"
+os.makedirs(static_dir, exist_ok=True)
+style_css_path = os.path.join(static_dir, "style.css")
+
+with open(style_css_path, "w") as f:
+    f.write(style_css_content)
+
+style_css_path
