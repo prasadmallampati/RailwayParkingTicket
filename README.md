@@ -1,26 +1,29 @@
 # 🚉 Railway Parking Ticket System
 
-A simple web-based parking ticket management system built with Python Flask and SQLite.
+[![Flask](https://img.shields.io/badge/built%20with-Flask-blue)](https://flask.palletsprojects.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A simple web-based parking ticket system built with **Python Flask** and **SQLite**, for managing parking entries and exits at railway stations.
 
 ---
 
 ## 📦 Features
 
-- User login and registration
-- Issue parking tickets with vehicle number & type
-- Prevent duplicate active tickets
-- Print customer tickets (no price)
-- Confirm exit with automatic charge calculation
-- Filter and view active/completed tickets
-- Export reports to CSV
-- Admin dashboard and summary view
+✅ Secure login and registration  
+✅ Issue tickets (vehicle number + type)  
+✅ Duplicate prevention for active tickets  
+✅ Printable ticket for customers (no price)  
+✅ Confirm exit and calculate charges  
+✅ View active and completed tickets  
+✅ Filter, search, and download CSV reports  
+✅ Admin dashboard with summary view  
 
 ---
 
 ## 💻 How to Run
 
-### 1. Clone the repo:
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/RailwayParkingTicket.git
+git clone https://github.com/prasadmallampati/RailwayParkingTicket.git
 cd RailwayParkingTicket
